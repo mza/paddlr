@@ -1,4 +1,8 @@
 ActionController::Routing::Routes.draw do |map|
+  map.resources :boats
+
+  map.resources :paddlers
+
   map.resources :teams
 
   # The priority is based upon order of creation: first created -> highest priority.

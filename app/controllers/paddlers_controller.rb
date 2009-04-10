@@ -1,0 +1,2 @@
+class PaddlersController < ApplicationController
+end

@@ -10,7 +10,22 @@
 </head>
 
 <body>
-
+	<h1>Paddlr</h1>
+	<hr noshade>
+	<ul>
+		<li>Senior doubles: <%= @senior_singles.size %></li>
+		<li>Endeavour: <%= @endeavour.size %></li>
+		<li>Junior doubles: <%= @junior_doubles.size %></li>
+		<li>Vet/Junior doubles: <%= @vet_junior_doubles.size %></li>		
+		<li>Senior singles: <%= @senior_singles.size %></li>
+		<li><b>TOTAL: <%= @total.size %></b></li>
+	</ul>
+	<hr noshade>
+	<ul>
+		<li><%= link_to "Refresh listings!", { :action => :refresh }, :confirm => "Are you sure, this will remove all current data?" %></li>
+	</ul>
+	<br />
+	<%= link_to "&larr; Home", root_url %>
 
 </body>
 </html>

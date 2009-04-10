@@ -7,6 +7,10 @@ class ApplicationController < ActionController::Base
   protect_from_forgery # See ActionController::RequestForgeryProtection for details
   filter_parameter_logging :password
   
+  def subdomain
+    (self.request.subdomains[0])
+  end
+  
   private
   
   def authenticate

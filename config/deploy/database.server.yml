@@ -1,0 +1,5 @@
+production:
+  adapter: mysql
+  database: paddlr_production
+  user: root
+  pass:
