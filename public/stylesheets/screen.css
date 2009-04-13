@@ -1,0 +1,141 @@
+/* @group global */
+
+* {
+	margin: 0px;
+	padding: 0px;
+}
+
+html, body {
+	margin: 0px;
+	padding: 0px;
+	background: #000 url(/images/background.jpg) no-repeat;
+	height: 100%;
+	min-width: 800px;
+}
+
+img {
+	border: 0px;
+}
+
+/* @end */
+
+/* @group elements */
+
+div.container {
+	margin: 0px;
+	position: absolute;
+	color: #fff;
+	z-index: 12;
+	top: 100px;
+	right: 0px;
+	padding: 10px 200px 10px 10px;
+	font: 14px/20px "Helvetica Neue", Helvetica, Arial, sans-serif;
+	text-shadow: #666 0 1px 1px;
+	border-right: solid #AE0000 12px;
+	background: #000;
+}
+
+div.container h1 {
+	font-weight: bold;
+	font-size: 50px;
+	padding: 10px;
+	border-bottom: 1px solid #666;
+}
+
+div.container h2 {
+	margin-top: 20px;
+	margin-left: 10px;
+	line-height: 23px;
+	font-size: 20px;
+	font-weight: normal;
+}
+
+div#header {
+	width: 400px;
+}
+
+div#search {
+	margin-top: 150px;
+	padding-left: 20px;
+	width: 390px;
+}
+
+div#browse {
+	margin-top: 500px;
+	padding-left: 20px;
+	width: 390px;
+}
+
+div#search h3 {
+	margin-bottom: 5px;
+}
+
+div#search input {
+	font-size: 16px;
+	padding: 4px;
+}
+
+p.label {
+	margin-top: 4px;
+}
+
+/* @end */
+
+/* @group links */
+
+a {
+	color: #fff;
+}
+
+a.button {
+	border: 3px solid #fff;
+	background: #AF0000;
+	text-decoration: none;
+	padding: 4px;
+}
+
+/* @end */
+
+/* @group border */
+
+#border {
+	display: block;
+	list-style: none;
+}
+
+#border li {
+	position: absolute;
+	background-color: #fff;
+	z-index: 10;
+	opacity:0.4;filter:alpha(opacity=40);
+}
+
+#top {
+	height: 12px;
+	top: 0;
+	right: 12px;
+	left: 12px;
+}
+
+#right {
+	width: 12px;
+	top: 0;
+	right: 0;
+	bottom: 0;
+}
+
+#bottom {
+	height: 12px;
+	bottom: 0;
+	right: 12px;
+	left: 12px;
+}
+
+#left {
+	width: 12px;
+	top: 0;
+	bottom: 0;
+	left: 0;
+}
+
+/* @end */

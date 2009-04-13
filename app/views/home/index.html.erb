@@ -4,13 +4,36 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-
-	<title>Paddlr - support for the Devizes to Westminster Canoe Race 2009, online</title>
+	<%= stylesheet_link_tag "screen"%>
+	<%= javascript_include_tag "application" %>
+	<title>towestminster.com - support for the Devizes to Westminster Canoe Race, online</title>
 	
 </head>
 
 <body>
-
-
+	<% form_tag :controller => "search" do |f|%>
+	<div class='container' id='header'>
+		<h1>to westminster!</h1>
+		<h2>Race times, positions and stats for the<br /> Devizes to Westminster Canoe Race.</h2>
+	</div>
+	<div class='container' id='search'>
+		<h3>search by boat, paddler or team</h3>
+		<input type='text' size="32" name="id"> <%= link_to 'Go!', "javascript:search();", :class => "button" %>
+		<p class='label'>for example: <%= link_to 'Jamie Cracknell', search_url("Jamie Cracknell") %>, <%= link_to '52', search_url("52") %> or <%= link_to "Kimbolton School", search_url("Kimbolton School") %> </p>
+	</div>
+	<div class='container' id='browse'>
+		<h3>browse</h3>
+		<p>
+			by <%= link_to 'class' %> &middot; <%= link_to 'year' %> &middot; <%= link_to 'team' %>
+		</p>
+	</div>
+	<% end %>	
+	<ul id='border'>
+		<li id='top'></li>
+		<li id='left'></li>
+		<li id='right'></li>
+		<li id='bottom'></li>	
+	</ul>
 </body>
+</html>
 </html>

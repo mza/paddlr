@@ -23,6 +23,8 @@
 	<hr noshade>
 	<ul>
 		<li><%= link_to "Refresh listings!", { :action => :refresh }, :confirm => "Are you sure, this will remove all current data?" %></li>
+		<li><%= link_to "Clear all listings!", { :action => :clear }, :confirm => "Are you sure, this will remove all current data?" %></li>
+		
 	</ul>
 	<br />
 	<%= link_to "&larr; Home", root_url %>

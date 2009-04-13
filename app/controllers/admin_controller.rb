@@ -8,14 +8,20 @@ class AdminController < ApplicationController
     @junior_doubles = Boat.junior_doubles
     @vet_junior_doubles = Boat.vet_junior_doubles
     @senior_singles = Boat.senior_singles
-    @total = Boat.all     
+    @total = Boat.all
   end
   
   def refresh
     Boat.destroy_all
     Paddler.destroy_all
-    PaddlerFactory.refresh_listing_from_web
-    redirect_to :action => index
+    a = PaddlerFactory.refresh_listing_from_web
+    redirect_to :controller => :admin, :action => :index    
+  end
+  
+  def clear
+    Boat.destroy_all
+    Paddler.destroy_all
+    redirect_to :controller => :admin, :action => :index    
   end
   
 end

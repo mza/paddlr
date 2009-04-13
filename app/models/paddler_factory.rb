@@ -1,5 +1,6 @@
 class PaddlerFactory 
   
+  require 'hpricot'
   require 'open-uri'
 
   def self.refresh_listing_from_web

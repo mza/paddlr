@@ -5,6 +5,9 @@ ActionController::Routing::Routes.draw do |map|
 
   map.resources :teams
 
+  map.search 'search/:id', :controller => "search"
+  map.boat 'boat/:year/:id', :controller => "boats", :action => "show"
+
   # The priority is based upon order of creation: first created -> highest priority.
 
   # Sample of regular route:

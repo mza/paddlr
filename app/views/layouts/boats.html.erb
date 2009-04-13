@@ -1,0 +1,28 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<%= stylesheet_link_tag "boats"%>
+	<%= javascript_include_tag "application" %>
+	<title>towestminster.com</title>
+	
+</head>
+
+<body>
+	<%= render :partial => "shared/header"%>
+	<div id='boat'>
+		<div class='container'>
+			<div class='number'>
+				<h1>2009 / <b><%= @boat.number %></b></h1>
+			</div>
+			<div class='names'>
+				<h2><%= @boat.paddler_names "&amp;" %></h2>
+				<%= @boat.classification %>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
+</html>
