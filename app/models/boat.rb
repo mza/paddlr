@@ -55,7 +55,7 @@ class Boat < ActiveRecord::Base
   end
 
   def distance_times
-    if self.timings.size > 12
+    if self.timings.size > 13
       distance_times_for_four_days
     else
       distance_times_for_straight_through

@@ -16,6 +16,12 @@ class AdminController < ApplicationController
     clear_all
     PaddlerFactory.refresh_listing_from_web
     TimingFactory.refresh_listing_from_web    
+    cracknell_correction
+    redirect_to :controller => :admin, :action => :index    
+  end
+  
+  def correct
+    cracknell_correction
     redirect_to :controller => :admin, :action => :index    
   end
   
@@ -32,6 +38,19 @@ class AdminController < ApplicationController
       Timing.destroy_all 
       Result.destroy_all
     end
+
+    def cracknell_correction
+      paddler = Paddler.find_by_first_name_and_surname("Cracknell", "James")
+      paddler.first_name = "James"
+      paddler.surname = "Cracknell"
+      paddler.save
+      
+      paddler = Paddler.find_by_first_name_and_surname("Shrosbree", "Bernie")
+      paddler.first_name = "Bernie"
+      paddler.surname = "Shrosbree"
+      paddler.save            
+    end
+    
   
 end
 

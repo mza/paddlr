@@ -11,7 +11,7 @@ class SearchController < ApplicationController
         
     @boat = Boat.find_by_number(@q)    
     @paddlers = Paddler.find_by_name(@q)      
-    @clubs = Paddler.find_all_by_club(@q)
+    @clubs = Paddler.find_all_by_club(@q).sort_by {|p| p.boat.result.time }
     
     unless @boat.nil?
       redirect_to :controller => :boats, :action => :show, :year => 2009, :id => @boat.number

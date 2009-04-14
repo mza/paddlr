@@ -1,1 +1,7 @@
-<li><%= paddler.boat.number %>: <%= link_to paddler.full_name, :controller => :boats, :action => :show, :id => paddler.boat.number, :year => 2009 %> (<%= paddler.club %>)</li>
+<tr>
+	<td><%= paddler.boat.retired? ? "" : paddler.boat.position.ordinalize %>
+	<td><%= link_to paddler.full_name, :controller => :boats, :action => :show, :id => paddler.boat.number, :year => 2009 %></td>
+	<td><%= paddler.club %></td>
+	<td><%= paddler.boat.classification %></td>
+	<td><%= paddler.boat.result.time %></td>
+</tr>

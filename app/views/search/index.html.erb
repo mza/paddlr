@@ -6,23 +6,32 @@
 	</div>
 </div>
 
+<% if @clubs.empty? %>
 <div class='search_results container'>
 	<h3>Paddlers</h3>
 	<% unless @paddlers.empty? %>
-	<ul>
+	<table width='100%' cellpadding='0' cellspacing='0'>
 		<%= render :partial => "paddler", :collection => @paddlers %>
-	</ul>
+	</table>
 	<% else %>
 	No paddlers found.
 	<% end %>
 </div>
+<% end %>
 
 <div class='search_results container'>
-	<h3>Clubs</h3>
+	<h3>Club paddlers</h3>
 	<% unless @clubs.empty? %>
-	<ul>
+	<table width='100%' cellpadding='0' cellspacing='0'>
+		<tr>
+			<th>Place</th>
+			<th>Paddler</th>
+			<th>Club</th>
+			<th>Class</th>
+			<th>Time</th>			
+		</tr>
 		<%= render :partial => "paddler", :collection => @clubs %>		
-	</ul>
+	</table>
 	<% else %>
 	No clubs found.
 	<% end %>

@@ -47,7 +47,7 @@ class TimingFactory
               when "13": timing(:time => value, :location => "Old Windsor", :boat => @boat)              
               when "14": timing(:time => value, :location => "Shepperton", :boat => @boat)              
               when "15": timing(:time => value, :location => "Teddington", :boat => @boat)              
-              when "26": timing(:time => value, :location => "Westminster", :boat => @boat)                              
+              when "16": timing(:time => value, :location => "Westminster", :boat => @boat)                              
             end
             
           end

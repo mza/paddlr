@@ -145,13 +145,13 @@ div#timings table {
 	padding: 0px;
 }
 
-div#timings th, div.entry th {
+div#timings th, div.entry th, div.search_results th {
 	font-weight: normal;
 	text-align: left;
 	border-bottom: 1px solid #AC0000;
 }
 
-div.entry th {
+div.entry th, div.search_results th {
 	font-size: 12px;
 	color: #666;
 }
