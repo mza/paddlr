@@ -8,6 +8,7 @@ class AdminController < ApplicationController
     @junior_doubles = Boat.junior_doubles
     @vet_junior_doubles = Boat.vet_junior_doubles
     @senior_singles = Boat.senior_singles
+    @results = Result.all
     @total = Boat.all
   end
   
@@ -29,6 +30,7 @@ class AdminController < ApplicationController
       Boat.destroy_all
       Paddler.destroy_all     
       Timing.destroy_all 
+      Result.destroy_all
     end
   
 end

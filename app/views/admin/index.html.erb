@@ -20,6 +20,9 @@
 		<li>Senior singles: <%= @senior_singles.size %></li>
 		<li><b>TOTAL: <%= @total.size %></b></li>		
 	</ul>
+	<ul>
+		<li>All results: <%= @results.size %></li>
+	</ul>
 	<hr noshade>
 	<ul>
 		<li><%= link_to "Refresh listings!", { :action => :refresh }, :confirm => "Are you sure, this will remove all current data?" %></li>
