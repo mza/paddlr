@@ -1,7 +1,5 @@
 class BoatsController < ApplicationController
-  
-  require 'gchart'
-  
+    
   def show
     @boat = Boat.find_by_number(params[:id])
     
