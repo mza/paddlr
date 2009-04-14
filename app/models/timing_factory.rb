@@ -13,7 +13,7 @@ class TimingFactory
   def self.refresh_listing(*args)
     options = args.extract_options!    
     doc = options[:js]
-    timing = nil
+    @boat = nil
     doc.each do |line|
       if line.match /^FourDayPs/
         details = line.split("=")
@@ -24,20 +24,44 @@ class TimingFactory
         unless key == "i"
           
           if key == "0"
-            timing = Timing.new
+            @boat  = Boat.find_by_number value
+          end          
+          
+          unless @boat.nil?
+                        
+            case key
+              when "5": timing(:time => value, :location => "Devizes", :boat => @boat)
+              when "6": timing(:time => value, :location => "Pewsey", :boat => @boat)
+              when "7": timing(:time => value, :location => "Hungerford", :boat => @boat)
+              when "8": timing(:time => value, :location => "Newbury", :boat => @boat)
+              when "9": timing(:time => value, :location => "Newbury", :boat => @boat)
+              when "10": timing(:time => value, :location => "Aldermaston", :boat => @boat)
+              when "11": timing(:time => value, :location => "Reading", :boat => @boat)
+              when "12": timing(:time => value, :location => "Marsh", :boat => @boat)              
+              when "13": timing(:time => value, :location => "Marlow", :boat => @boat)              
+              when "14": timing(:time => value, :location => "Marlow", :boat => @boat)              
+              when "15": timing(:time => value, :location => "Bray", :boat => @boat)              
+              when "16": timing(:time => value, :location => "Old Windsor", :boat => @boat)              
+              when "17": timing(:time => value, :location => "Shepperton", :boat => @boat)              
+              when "18": timing(:time => value, :location => "Teddington", :boat => @boat)              
+              when "19": timing(:time => value, :location => "Teddington", :boat => @boat)              
+              when "20": timing(:time => value, :location => "Westminster", :boat => @boat)                              
+            end
+            
           end
           
-          puts "#{key}: #{value}"
         end
       end
     end
   end
   
-  def self.property(key)
-    if @@properties.nil?
-      properties = { :0 => "boat_id" }
-    end
-    properties[key.to_sym]
+  def self.timing(*args)
+    options = args.extract_options!    
+    t = Timing.new
+    t.time = options[:time].chomp
+    t.location = Location.find_by_name(options[:location])
+    t.boat = options[:boat]
+    t.save
   end
-  
+    
 end

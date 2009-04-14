@@ -9,11 +9,19 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090410102804) do
+ActiveRecord::Schema.define(:version => 20090414063113) do
 
   create_table "boats", :force => true do |t|
     t.integer  "number"
     t.string   "entered_in"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "locations", :force => true do |t|
+    t.float    "latitude"
+    t.float    "longitude"
+    t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -36,11 +44,9 @@ ActiveRecord::Schema.define(:version => 20090410102804) do
   end
 
   create_table "timings", :force => true do |t|
-    t.string   "status"
-    t.string   "elapsed_time"
-    t.string   "time_today"
+    t.string   "time"
     t.string   "notes"
-    t.string   "location"
+    t.string   "location_id"
     t.integer  "boat_id"
     t.datetime "created_at"
     t.datetime "updated_at"

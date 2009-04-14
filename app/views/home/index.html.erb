@@ -18,13 +18,13 @@
 	</div>
 	<div class='container' id='search'>
 		<h3>search by boat, paddler or team</h3>
-		<input type='text' size="32" name="id"> <%= link_to 'Go!', "javascript:search();", :class => "button" %>
+		<input type='text' size="32" name="q"> <%= link_to 'Go!', "javascript:search();", :class => "button" %>
 		<p class='label'>for example: <%= link_to 'Jamie Cracknell', search_url("Jamie Cracknell") %>, <%= link_to '52', search_url("52") %> or <%= link_to "Kimbolton School", search_url("Kimbolton School") %> </p>
 	</div>
 	<div class='container' id='browse'>
 		<h3>browse</h3>
 		<p>
-			by <%= link_to 'class' %> &middot; <%= link_to 'year' %> &middot; <%= link_to 'team' %>
+			by <%= link_to 'class', :controller => :browse, :action => :classes %> &middot; <%= link_to 'year', :controller => :browse, :action => :year %> &middot; <%= link_to 'team', :controller => :browse, :action => :team %>
 		</p>
 	</div>
 	<% end %>	

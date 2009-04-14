@@ -1,11 +1,9 @@
 class CreateTimings < ActiveRecord::Migration
   def self.up
     create_table :timings do |t|
-      t.string :status
-      t.string :elapsed_time
-      t.string :time_today
+      t.string :time
       t.string :notes
-      t.string :location
+      t.string :location_id
       t.integer :boat_id
       t.timestamps
     end

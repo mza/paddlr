@@ -35,6 +35,10 @@ div.container {
 	width: 700px;
 }
 
+div#map {
+	margin-top: 22px;
+}
+
 div#boat {
 	background: #AC0000;
 	text-shadow: #666 0 1px 1px;
@@ -47,6 +51,15 @@ div#boat h1 {
 	font-weight: normal;
 }
 
+div.browse {
+	padding: 10px 0px 10px 0px;	
+}
+
+div.browse h2 {
+	font-size: 26px;
+	font-weight: normal;
+}
+
 div#boat h2 {
 	font-size: 26px;
 	padding-bottom: 5px;
@@ -54,12 +67,12 @@ div#boat h2 {
 
 div.number {
 	float: left;
-	width: 300px;
+	width: 250px;
 }
 
 div.names {
 	float: right;
-	width: 300px;
+	width: 420px;
 	text-align: right;
 	padding: 16px 0px 0px 0px;
 }

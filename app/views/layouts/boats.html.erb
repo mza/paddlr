@@ -12,17 +12,7 @@
 
 <body>
 	<%= render :partial => "shared/header"%>
-	<div id='boat'>
-		<div class='container'>
-			<div class='number'>
-				<h1>2009 / <b><%= @boat.number %></b></h1>
-			</div>
-			<div class='names'>
-				<h2><%= @boat.paddler_names "&amp;" %></h2>
-				<%= @boat.classification %>
-			</div>
-		</div>
-	</div>
+	<%= yield %>
 </body>
 </html>
 </html>

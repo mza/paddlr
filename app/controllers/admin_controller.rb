@@ -12,16 +12,24 @@ class AdminController < ApplicationController
   end
   
   def refresh
-    Boat.destroy_all
-    Paddler.destroy_all
-    a = PaddlerFactory.refresh_listing_from_web
+    clear_all
+    PaddlerFactory.refresh_listing_from_web
+    TimingFactory.refresh_listing_from_web    
     redirect_to :controller => :admin, :action => :index    
   end
   
   def clear
-    Boat.destroy_all
-    Paddler.destroy_all
+    clear_all
     redirect_to :controller => :admin, :action => :index    
   end
+
+  private 
+  
+    def clear_all
+      Boat.destroy_all
+      Paddler.destroy_all     
+      Timing.destroy_all 
+    end
   
 end
+

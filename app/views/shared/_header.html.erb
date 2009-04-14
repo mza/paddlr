@@ -4,10 +4,12 @@
 			<%= link_to 'to westminster!', root_url %>
 		</div>
 		<div class='links'>
-			<%= link_to 'home', root_url %> &middot; browse by <%= link_to 'class' %>, <%= link_to 'year' %> or <%= link_to 'team' %>				
+			<%= link_to 'home', root_url %> &middot; browse by <%= link_to 'class', :controller => :browse, :action => :classes %>, <%= link_to 'year', :controller => :browse, :action => :year %> or <%= link_to 'team', :controller => :browse, :action => :team %>				
 		</div>
 		<div class='search'>
-			<input type='search' size='16' placeholder='Search'>
+			<% form_tag :controller => :search do |f|%>
+			<input type='search' size='16' name="q" placeholder='Search'>
+			<% end %>
 		</div>
 	</div>
 </div>

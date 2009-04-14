@@ -1,0 +1,19 @@
+<div id='boat'>
+	<div class='container'>
+		<div class='number'>
+			<h1>2009 / <b><%= @boat.number %></b></h1>
+		</div>
+		<div class='names'>
+			<h2><%= @boat.paddler_names "&amp;" %></h2>
+			<%= @boat.classification %>
+		</div>
+	</div>
+</div>
+
+<div id='map' class='container'>
+	
+	<%= GMap.header %>  
+	<%= @map.to_html %>  
+	<%= @map.div(:width => 700, :height => 300) %>
+	
+</div>
