@@ -21,6 +21,15 @@ class Boat < ActiveRecord::Base
     names
   end
   
+  def paddler_names_with_clubs(ampersand = "and")
+    names = "#{self.paddlers.first.full_name} (#{self.paddlers.first.club})"
+    if self.paddlers.size > 1
+      names = "#{names} #{ampersand} #{self.paddlers.second.full_name} (#{self.paddlers.second.club})"
+    end
+    names
+    
+  end
+  
   def classification
     classification = self.entered_in
     if classification == "Vet_Junior doubles"

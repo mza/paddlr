@@ -10,11 +10,20 @@
 	<h3>Paddlers</h3>
 	<% unless @paddlers.empty? %>
 	<ul>
-		<% for paddler in @paddlers %>
-		<li><%= link_to paddler.full_name, :controller => :boats, :action => :show, :id => paddler.boat.number, :year => 2009 %></li>
-		<% end%>
+		<%= render :partial => "paddler", :collection => @paddlers %>
 	</ul>
 	<% else %>
 	No paddlers found.
+	<% end %>
+</div>
+
+<div class='search_results container'>
+	<h3>Clubs</h3>
+	<% unless @clubs.empty? %>
+	<ul>
+		<%= render :partial => "paddler", :collection => @clubs %>		
+	</ul>
+	<% else %>
+	No clubs found.
 	<% end %>
 </div>
