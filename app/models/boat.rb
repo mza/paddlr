@@ -9,6 +9,22 @@ class Boat < ActiveRecord::Base
   named_scope :vet_junior_doubles, :conditions => { :entered_in => "Vet_Junior doubles" }
   named_scope :senior_singles, :conditions => { :entered_in => "Senior singles" }
 
+  def position
+    pos = self.result.position.to_i
+    if pos == 0
+      pos = 999
+    end
+    pos
+  end
+
+  def retired?
+    if self.position.to_i == 999
+      return true
+    else
+      return false
+    end
+  end
+
   def timings_for_location(location)
     timings.select {|t| t.location == location }
   end
