@@ -22,6 +22,9 @@ ActiveRecord::Schema.define(:version => 20090414063113) do
     t.float    "latitude"
     t.float    "longitude"
     t.string   "name"
+    t.boolean  "start",      :default => false
+    t.boolean  "finish",     :default => false
+    t.float    "distance"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

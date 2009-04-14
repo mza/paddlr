@@ -10,10 +10,19 @@
 	</div>
 </div>
 
-<div id='map' class='container'>
-	
+<div id='map' class='container'>	
 	<%= GMap.header %>  
 	<%= @map.to_html %>  
 	<%= @map.div(:width => 700, :height => 300) %>
-	
+</div>
+
+<div id='timings' class='container'>
+	<table>
+	<% for timing in @boat.timings %>
+	<tr>
+		<td><%= timing.location.name %></td>
+		<td><%= timing.time %></td>
+	</tr>
+	<% end %>
+	</table>
 </div>
