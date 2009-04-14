@@ -165,10 +165,17 @@ class Boat < ActiveRecord::Base
   end
   
   def time_between(start_time, end_time)
-    start_time = time_to_seconds(start_time)
-    end_time = time_to_seconds(end_time)
+    start_seconds = time_to_seconds(start_time)
+    end_seconds = time_to_seconds(end_time)
     
-    total = end_time - start_time
+    start_day = start_time.split(" ").first
+    end_day = end_time.split(" ").first
+    
+    if start_day != end_day
+      end_seconds = end_seconds + (60 * 60 * 24)
+    end
+        
+    total = end_seconds - start_seconds
     total
   end
     
