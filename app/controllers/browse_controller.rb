@@ -25,6 +25,10 @@ class BrowseController < ApplicationController
   end
   
   def team
+    @teams = []
+    Paddler.all(:order => :club).map {|p| p.club.downcase }.uniq.each do |t|
+      @teams << Team.new(:name => t)
+    end
   end
   
 end

@@ -5,3 +5,14 @@
 		</div>
 	</div>
 </div>
+
+<div class='entry container'>
+	<table width='100%' cellpadding='0' cellspacing='0'>
+		<% @teams.each do |team| %>
+		<tr>
+			<td><%= link_to team.name, :controller => :search, :id => team.name %></td>
+			<td><%= pluralize team.paddlers.size, "paddler" %></td>
+		</tr>
+		<% end %>
+	<table>
+</div>

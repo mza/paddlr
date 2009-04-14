@@ -9,4 +9,10 @@ class Paddler < ActiveRecord::Base
     Paddler.all.select{ |p| p.full_name.downcase == name.downcase }
   end
   
+  def club
+    n = read_attribute(:club).split(/\s+/).each{ |word| word.capitalize! }.join(' ')
+    n.gsub!(/Cc/, "CC")
+    n
+  end
+  
 end

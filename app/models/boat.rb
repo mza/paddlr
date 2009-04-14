@@ -24,7 +24,7 @@ class Boat < ActiveRecord::Base
       return false
     end
   end
-
+  
   def timings_for_location(location)
     timings.select {|t| t.location == location }
   end
