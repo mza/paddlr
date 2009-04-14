@@ -219,3 +219,32 @@ div#footer a {
 div#footer a:hover {
 	text-decoration: underline;
 }
+
+div.query {
+	padding: 10px 0px 10px 0px;
+}
+
+div.search_results {
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+div.search_results h3 {
+	margin-bottom: 10px;
+	padding-bottom: 5px;
+	border-bottom: 1px solid #ccc;
+}
+
+div.search_results ul {
+	margin-left: 20px;
+	list-style: square;
+}
+
+div.search_results a, div.search_results a:visited {
+	color: #AC0000;
+	text-decoration: none;
+}
+
+div.search_results a:hover {
+	text-decoration: underline;	
+}

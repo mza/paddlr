@@ -5,4 +5,8 @@ class Paddler < ActiveRecord::Base
     "#{first_name} #{surname}"
   end
   
+  def self.find_by_name(name)
+    Paddler.all.select{ |p| p.full_name.downcase == name.downcase }
+  end
+  
 end

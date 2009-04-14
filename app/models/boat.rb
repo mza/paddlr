@@ -29,7 +29,49 @@ class Boat < ActiveRecord::Base
     classification
   end
 
-  def distance_times    
+  def distance_times
+    if self.timings.size > 12
+      distance_times_for_four_days
+    else
+      distance_times_for_straight_through
+    end
+  end
+
+  def distance_times_for_straight_through
+    # Cumulative timings
+    
+    # 0: Devizes
+    # 1: Pewsey
+    # 2: Hungerford
+    # 3: Newbury    
+    # 4: Aldermaston
+    # 5: Reading
+    # 6: Marsh
+    # 7: Marlow    
+    # 8: Bray
+    # 9: Old Windsor
+    # 10: Shepperton
+    # 11: Teddington
+    # 12: Westminster
+    
+    stage_1 = time_between(self.timings[0].time, self.timings[1].time) 
+    stage_2 = stage_1 + time_between(self.timings[1].time, self.timings[2].time) 
+    stage_3 = stage_2 + time_between(self.timings[2].time, self.timings[3].time)   
+    stage_4 = stage_3 + time_between(self.timings[3].time, self.timings[4].time) 
+    stage_5 = stage_4 + time_between(self.timings[4].time, self.timings[5].time) 
+    stage_6 = stage_5 + time_between(self.timings[5].time, self.timings[6].time) 
+    stage_7 = stage_6 + time_between(self.timings[6].time, self.timings[7].time) 
+    stage_8 = stage_7 + time_between(self.timings[7].time, self.timings[8].time)
+    stage_9 = stage_8 + time_between(self.timings[8].time, self.timings[9].time) 
+    stage_10 = stage_9 + time_between(self.timings[9].time, self.timings[10].time) 
+    stage_11 = stage_10 + time_between(self.timings[10].time, self.timings[11].time)
+    stage_12 = self.total_time_in_seconds
+    
+    "0,#{stage_1},#{stage_2},#{stage_3},#{stage_4},#{stage_5},#{stage_6},#{stage_7},#{stage_8},#{stage_9},#{stage_10},#{stage_11},#{stage_12}"
+    
+  end
+
+  def distance_times_for_four_days
     
     # Cumulative timings
     
