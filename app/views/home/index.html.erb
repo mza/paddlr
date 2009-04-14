@@ -22,10 +22,17 @@
 		<p class='label'>for example: <%= link_to 'Jamie Cracknell', search_url("Jamie Cracknell") %>, <%= link_to '52', search_url("52") %> or <%= link_to "Kimbolton School", search_url("Kimbolton School") %> </p>
 	</div>
 	<div class='container' id='browse'>
-		<h3>browse</h3>
-		<p>
-			by <%= link_to 'class', :controller => :browse, :action => :classes %> &middot; <%= link_to 'year', :controller => :browse, :action => :year %> &middot; <%= link_to 'team', :controller => :browse, :action => :team %>
-		</p>
+		<div class='content'>
+			<h3>browse</h3>
+			<p>
+				by <%= link_to 'class', :controller => :browse, :action => :classes %> &middot; <%= link_to 'year', :controller => :browse, :action => :year %> &middot; <%= link_to 'team', :controller => :browse, :action => :team %>
+			</p>
+		</div>
+		
+		<div class='footnote'>
+			a canoe/data mash up by <%= link_to 'mza', "http://twitter.com/mza" %><br />
+			photography &copy; <%= link_to 'avtost', "http://www.flickr.com/photos/avtost/" %>, via <%= link_to 'flickr', "http://www.flickr.com/photos/avtost/449754580/" %>
+		</div>
 	</div>
 	<% end %>	
 	<ul id='border'>
