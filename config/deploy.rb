@@ -7,7 +7,7 @@ set :scm, "git"
 set :repository,  "git@github.com:mza/#{application}.git"
 set :branch, "master"
 set :user, "root"
-set :deploy_to, "/var/rails/#{application}"
+set :deploy_to, "/vol/rails/#{application}"
 set :scm_verbose, true
 set :use_sudo, false
 set :keep_releases, 1
