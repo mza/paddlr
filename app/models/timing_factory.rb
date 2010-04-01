@@ -5,11 +5,11 @@ class TimingFactory
   @@properties = nil
   
   def self.refresh_listing_from_web
-    url = "http://www.dwrace.org.uk/results/2009/Progress/FourDayPs.js"
+    url = "http://www.dwrace.org.uk/results/2010/Progress/FourDayPs.js"
     doc = open(url)
     refresh_listing :js => doc
     
-    url = "http://www.dwrace.org.uk/results/2009/Progress/OvernightPs.js"
+    url = "http://www.dwrace.org.uk/results/2010/Progress/OvernightPs.js"
     doc = open(url)
     refresh_listing_overnight :js => doc
         

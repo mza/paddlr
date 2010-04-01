@@ -4,7 +4,7 @@ class PaddlerFactory
   require 'open-uri'
 
   def self.refresh_listing_from_web
-    url = "http://www.dwrace.org.uk/results/2009/Results/OverallClassResults.html"
+    url = "http://www.dwrace.org.uk/results/2010/Results/OverallClassResults.html"
     doc = Hpricot(open(url))
     refresh_listing :xml => doc
   end
