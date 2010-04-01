@@ -18,6 +18,13 @@ class AdminController < ApplicationController
     TimingFactory.refresh_listing_from_web    
     redirect_to :controller => :admin, :action => :index    
   end
+  
+  def refresh_timing
+    Timing.destroy_all 
+    Result.destroy_all
+    TimingFactory.refresh_listing_from_web    
+    redirect_to :controller => :admin, :action => :index
+  end
     
   def clear
     clear_all
