@@ -25,8 +25,8 @@
 			<td><%= boat.retired? ? "--" : (index + 1).ordinalize %></td>
 			<td><%= boat.number %></td>
 			<td><%= link_to boat.paddler_names, :controller => :boats, :action => :show, :id => boat.number, :year => 2009 %></td>
-			<td><%= boat.retired? ? "&nbsp;" : boat.result.time %></td>
-			<td><%= boat.retired? ? "&nbsp;" : boat.average_speed %></td>
+			<td><%= boat.result.nil? ? "&nbsp;" : boat.result.time %></td>
+			<td><%= boat.result.nil? ? "&nbsp;" : boat.average_speed %></td>
 		</tr>
 		<% end %>
 	</table>

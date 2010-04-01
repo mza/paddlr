@@ -10,9 +10,13 @@ class Boat < ActiveRecord::Base
   named_scope :senior_singles, :conditions => { :entered_in => "Senior singles" }
 
   def position
-    pos = self.result.position.to_i
-    if pos == 0
-      pos = 999
+    if self.result
+      pos = self.result.position.to_i
+      if pos == 0
+        pos = 999
+      end
+    else
+      post = 999
     end
     pos
   end

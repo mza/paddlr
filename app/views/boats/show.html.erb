@@ -63,20 +63,21 @@
 		
 		<% if @boat.retired? %>
 		<div class='result'>
-			<div class='position'>retired</div>
+			<div class='position'>--</div>
 			<div class='time'>unplaced</div>
 		</div>
 		<% else %>
+		  <% if @boat.result %>
 			<div class='result'>
 				<div class='position'><%= @boat.result.position.to_i.ordinalize%></div>
 				<div class='time'><%= @boat.result.time %></div>
 			</div>
-		
+
 			<div class='result'>
 				<div class='value'><%= @boat.average_speed %> mph</div>
 				<div class='key'>average speed</div>
 			</div>
-		
+
 			<div class='chart'>
 				<%= image_tag("http://chart.apis.google.com/chart?chs=200x150&chd=t:
 				0,11.5,29.0,34.5,47,54,62,74,82,84,97,107.5,125|
@@ -89,6 +90,14 @@
 				&cht=lxy")%>
 			</div>
 			<div class='legend'>distance / time</div>
+
+			<% else %>
+  			<div class='result'>
+  				<div class='position'>---</div>
+  				<div class='time'>in progress</div>
+  			</div>
+      <% end %>			
+		
 		<% end %>
 	</div>
 	
